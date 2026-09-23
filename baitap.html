@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Table</title>
+
+    <style>
+        /* Bảng chính */
+        
+        table {
+            border-collapse: separate;
+            border-spacing: 4px;
+            font-family: "Times New Roman", serif;
+            font-size: 30px;
+        }
+        /* Ô trong bảng */
+        
+        th,
+        td {
+            border: 2px solid #555;
+            padding: 5px;
+        }
+        /* Tiêu đề chính */
+        
+        th {
+            background-color: #3bc4c7;
+            text-align: center;
+            font-weight: bold;
+        }
+        /* Ô Specifications */
+        
+        .specifications {
+            background-color: #3bc4c7;
+        }
+        /* Bảng con */
+        
+        .nested-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+        /* Header của bảng con */
+        
+        .nested-table th {
+            background-color: #ffd966;
+        }
+        /* Nội dung bảng con */
+        
+        .nested-table td {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table border="1">
+
+        <tr>
+            <th>Device</th>
+            <th>Brand</th>
+            <th colspan="2" class="specifications">Specifications</th>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Smartphone</td>
+            <td rowspan="2">Apple</td>
+
+            <td colspan="2">
+                <table class="nested-table" border="1">
+
+                    <tr>
+                        <th>Model</th>
+                        <th>Storage</th>
+                    </tr>
+
+                    <tr>
+                        <td>iPhone 12 Pro</td>
+                        <td>256GB</td>
+                    </tr>
+
+                    <tr>
+                        <td>iPhone SE</td>
+                        <td>128GB</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+
+        <tr>
+            <td>Laptop</td>
+            <td>HP</td>
+            <td colspan="2">15.6" Display</td>
+        </tr>
+
+        <tr>
+            <td>Tablet</td>
+            <td>Samsung</td>
+            <td colspan="2">10.5" Display</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

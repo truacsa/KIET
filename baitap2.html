@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+        }
+        
+        .form-container {
+            width: 320px;
+            margin: 30px auto;
+            padding: 15px;
+            border: 1px solid #999;
+        }
+        
+        h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 145px;
+        }
+        
+        input[type="number"] {
+            width: 110px;
+        }
+        
+        textarea {
+            width: 255px;
+            height: 90px;
+            resize: both;
+        }
+        
+        select {
+            width: 145px;
+        }
+        
+        .gender,
+        .preferences {
+            margin-bottom: 3px;
+        }
+        
+        button {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h3>Registration Form</h3>
+
+        <form>
+
+            <div>
+                <label>FIRST NAME:</label>
+                <input type="text" placeholder="Enter First Name">
+            </div>
+
+            <div>
+                <label>LAST NAME:</label>
+                <input type="text" placeholder="Enter Last Name">
+            </div>
+
+            <div>
+                <label>Email :</label>
+                <input type="email" placeholder="Enter Email Address">
+            </div>
+
+            <div>
+                <label>Password :</label>
+                <input type="password">
+            </div>
+
+            <div>Gender :</div>
+
+            <div class="gender">
+                <label></label>
+                <input type="radio" name="gender"> Male
+            </div>
+
+            <div class="gender">
+                <label></label>
+                <input type="radio" name="gender"> Female
+            </div>
+
+            <div class="gender">
+                <label></label>
+                <input type="radio" name="gender"> Other
+            </div>
+
+            <div>
+                <label>Age :</label>
+                <input type="number">
+            </div>
+
+            <div>Preferences :</div>
+
+            <div class="preferences">
+                <label></label>
+                <input type="checkbox"> Acrylic Painting
+            </div>
+
+            <div class="preferences">
+                <label></label>
+                <input type="checkbox"> Oil Painting
+            </div>
+
+            <div class="preferences">
+                <label></label>
+                <input type="checkbox"> Water Color Painting
+            </div>
+
+            <div>
+                <label>Select Occupation</label>
+                <select>
+                    <option>Student</option>
+                    <option>Teacher</option>
+                    <option>Engineer</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Bio</label>
+                <textarea placeholder="Share few lines about yourself..."></textarea>
+            </div>
+
+            <button type="reset">RESET</button>
+            <button type="submit">SUBMIT</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
