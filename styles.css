@@ -1,0 +1,120 @@
+ * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 24px;
+    color: #222;
+  }
+  h1 { text-align: center; color: #2c3e50; }
+  h2 { margin-top: 0; color: #2c3e50; font-size: 18px; }
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* ---- Màn hình đăng nhập / đăng ký ---- */
+  #manHinhDangNhap {
+    max-width: 360px;
+    margin: 60px auto;
+    text-align: center;
+  }
+  #manHinhDangNhap input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  #manHinhDangNhap button {
+    width: 48%;
+    padding: 10px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #btnDangNhap { background: #3498db; color: #fff; margin-right: 4%; }
+  #btnDangNhap:hover { background: #2980b9; }
+  #btnDangKy { background: #2ecc71; color: #fff; }
+  #btnDangKy:hover { background: #27ae60; }
+  .thong-bao { min-height: 20px; font-size: 13px; margin: 8px 0; }
+  .loi { color: #e74c3c; }
+  .thanh-cong { color: #27ae60; }
+
+  /* ---- Màn hình cửa hàng ---- */
+  .thanh-tren {
+    max-width: 900px;
+    margin: 0 auto 12px auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .thanh-tren button {
+    background: #95a5a6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .thanh-tren button:hover { background: #7f8c8d; }
+
+  .layout {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 14px;
+  }
+  th { background: #34495e; color: #fff; }
+  tr:hover { background: #f9f9f9; }
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .btn-them { background: #2ecc71; color: #fff; }
+  .btn-them:hover { background: #27ae60; }
+  .btn-xoa { background: #e74c3c; color: #fff; }
+  .btn-xoa:hover { background: #c0392b; }
+  .tong-tien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 16px 0;
+    color: #2c3e50;
+  }
+  #btnThanhToan {
+    width: 100%;
+    background: #f39c12;
+    color: #fff;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  #btnThanhToan:hover { background: #d68910; }
+  .gio-trong {
+    text-align: center;
+    color: #999;
+    padding: 20px 0;
+  }

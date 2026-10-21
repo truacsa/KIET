@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Todo List</h1>
+
+        <!-- Ô nhập công việc mới -->
+        <div class="form-nhap">
+            <input type="text" id="noiDung" placeholder="Nhập công việc cần làm...">
+            <button id="btnThem" onclick="themCongViec()">Thêm</button>
+        </div>
+
+        <!-- DANH SÁCH CÔNG VIỆC -->
+        <ul id="danhSach">
+            <!-- JS sẽ điền dữ liệu vào đây -->
+        </ul>
+    </div>
+
+    <script>
+        /* ====================================================                                                                                                                                                                                             ========================================================= */
+        let danhSachCV = [{
+            id: 1,
+            noiDung: "Học bài JavaScript",
+            hoanThanh: false
+        }, {
+            id: 2,
+            noiDung: "Làm bài tập về nhà",
+            hoanThanh: true
+        }, {
+            id: 3,
+            noiDung: "Ôn thi giữa kỳ",
+            hoanThanh: false
+        }];
+
+
+        // Biến đếm để cấp id mới cho công việc tiếp theo được thêm vào
+        let idTiepTheo = 4;
+
+        /* =========================================================
+           2. LẤY THAM CHIẾU CÁC PHẦN TỬ DOM CẦN DÙNG NHIỀU LẦN
+           ========================================================= */
+        let oNoiDung = document.getElementById("noiDung");
+        // lay danh sach
+        let oDanhSach = document.getElementById("danhSach");
+        /* =========================================================
+           3. HÀM TÌM VỊ TRÍ 1 CÔNG VIỆC TRONG MẢNG THEO ID
+           Dùng vòng lặp for thông thường, trả về index nếu tìm thấy,
+           trả về -1 nếu không có.
+           ========================================================= */
+        function timVi(id) {
+            for (let i = 0; i < danhSachCV.length; i++) {
+                if (danhSachCV[i].id === id) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        /* =========================================================
+           4. HÀM VẼ LẠI TOÀN BỘ DANH SÁCH DỰA TRÊN danhSachCV
+           Dùng vòng lặp for để nối chuỗi HTML. Mỗi khi dữ liệu thay
+           đổi xong đều gọi lại hàm này để giao diện cập nhật theo.
+           ========================================================= */
+        function hienThiDanhSach() {
+            //tao chuoi html rong
+            let html = "";
+            //duyet toan bo cong viec
+            for (let i = 0; i < danhSachCV.length; i++) {
+                //lay cong viec tai index i
+                let cv = danhSachCV[i];
+                //kiem tra trang thai check box
+                let trangThai = "";
+                if (cv.hoanThanh === true) {
+                    trangThai = "checked";
+                }
+                //xac dinh class css cua noi dung
+                let lopCSS = "noi-dung";
+                if (cv.hoanThanh === true) {
+                    lopCSS = "noi-dung hoan-thanh";
+                }
+                //tao html cho tung cong viec
+                html += `
+            <li>
+               <input type="checkbox" ${trangThai} onchange="toggleHoanThanh(${cv.id})"/>
+               <span class="${lopCSS}">
+                  ${cv.noiDung}
+               </span>
+               <button class="btn-xoa" onclick="xoaCongViec(${cv.id})">
+                  Xoa
+               </button>
+            </li>
+         `;
+            } //ket thuc for
+            oDanhSach.innerHTML = html;
+        }
+        /* =========================================================
+           5. HÀM THÊM CÔNG VIỆC MỚI
+           ========================================================= */
+        function themCongViec() {
+            let textNoiDung = oNoiDung.value.trim();
+
+            if (textNoiDung === "") {
+                alert("Vui lòng nhập công việc cần làm!");
+                return;
+            }
+
+            let cv = {
+                id: idTiepTheo,
+                noiDung: textNoiDung,
+                hoanThanh: false
+            };
+
+            danhSachCV.push(cv);
+            idTiepTheo++;
+
+            oNoiDung.value = "";
+            hienThiDanhSach();
+        }
+
+        /* =========================================================
+           6. HÀM XÓA 1 CÔNG VIỆC THEO ID
+           ========================================================= */
+        function xoaCongViec(id) {
+            //lay vi tri xoa
+            let viTri = timViTri(id)
+                //xoa 1 phan tu
+            danhSachCV.splice(viTri, 1);
+            //cat nhat lai giao dien
+            hienThiDanhSach();
+        }
+        /* =========================================================
+           7. HÀM ĐÁNH DẤU HOÀN THÀNH / BỎ ĐÁNH DẤU
+           Đảo ngược giá trị true/false của thuộc tính hoanThanh
+           ========================================================= */
+        function toggleHoanThanh(id) {
+            // Tim vi tri 
+            let viTri = timViTri(id);
+            //dao nguoc trang thai hoan thanh
+            danhSachCV[viTri].hoanThanh = !danhSachCV[viTri].hoanThanh;
+            // Cap nhat lai giao dien
+            hienThiDanhSach();
+        }
+        /* =========================================================
+           8. HIỂN THỊ DANH SÁCH LẦN ĐẦU KHI TẢI TRANG
+           ========================================================= */
+        hienThiDanhSach();
+    </script>
+
+</body>
+
+</html>

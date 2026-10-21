@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập: Cửa Hàng Online - Đăng Nhập</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+      MÀN HÌNH ĐĂNG NHẬP / ĐĂNG KÝ
+      Đây là màn hình đầu tiên người dùng nhìn thấy. Sau khi
+      đăng nhập thành công, màn hình này sẽ ẩn đi và màn hình
+      cửa hàng bên dưới sẽ hiện ra.
+      ========================================================= -->
+    <div id="manHinhDangNhap" class="card">
+        <h2>Đăng nhập / Đăng ký</h2>
+        <input type="text" id="oTaiKhoan" placeholder="Tài khoản">
+        <input type="password" id="oMatKhau" placeholder="Mật khẩu">
+        <div class="thong-bao" id="thongBaoLoi"></div>
+        <button id="btnDangNhap" onclick="dangNhap()">Đăng nhập</button>
+        <button id="btnDangKy" onclick="dangKy()">Đăng ký</button>
+        <p style="font-size:12px;color:#999;margin-top:12px;">
+            Tài khoản mẫu có sẵn: <b>khach1</b> / mật khẩu <b>123456</b>
+        </p>
+    </div>
+
+    <!-- =========================================================
+      MÀN HÌNH CỬA HÀNG
+      Bị ẩn (display: none) cho đến khi đăng nhập thành công.
+      Phần sản phẩm / giỏ hàng ở đây đã code sẵn (bài trước em
+      đã làm), không cần sửa gì trong khu vực này.
+      ========================================================= -->
+    <div id="manHinhCuaHang" style="display: none;">
+        <div class="thanh-tren">
+            Xin chào, <b id="tenDangNhap"></b>
+            <button onclick="dangXuat()">Đăng xuất</button>
+        </div>
+
+        <h1>Cửa Hàng Online</h1>
+
+        <div class="layout">
+            <!-- DANH SÁCH SẢN PHẨM -->
+            <div class="card">
+                <h2>Danh sách sản phẩm</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="bangSanPham">
+                        <!-- JS sẽ điền dữ liệu vào đây -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- GIỎ HÀNG -->
+            <div class="card">
+                <h2>Giỏ hàng</h2>
+                <div id="bangGioHang">
+                    <!-- JS sẽ điền dữ liệu vào đây -->
+                </div>
+                <div class="tong-tien">
+                    <span>Tổng tiền:</span>
+                    <span id="tongTien">0đ</span>
+                </div>
+                <button id="btnThanhToan" onclick="thanhToan()">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./main.js">
+    </script>
+</body>
+
+</html>

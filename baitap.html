@@ -4,109 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nested Table</title>
-
+    <title>baitap</title>
     <style>
-        /* Bảng chính */
-        
-        table {
-            border-collapse: separate;
-            border-spacing: 4px;
-            font-family: "Times New Roman", serif;
-            font-size: 30px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        /* Ô trong bảng */
         
-        th,
-        td {
-            border: 2px solid #555;
-            padding: 5px;
+        .product {
+            display: flex;
         }
-        /* Tiêu đề chính */
         
-        th {
-            background-color: #3bc4c7;
-            text-align: center;
-            font-weight: bold;
+        .product-item {
+            width: 20%;
+            margin: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
         }
-        /* Ô Specifications */
         
-        .specifications {
-            background-color: #3bc4c7;
+        .product-image {
+            width: 90%;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            margin: 14px;
         }
-        /* Bảng con */
         
-        .nested-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 4px;
+        .product-item:hover .product-image {
+            transform: scale(1.08);
         }
-        /* Header của bảng con */
         
-        .nested-table th {
-            background-color: #ffd966;
+        .product-name,
+        .star,
+        .price,
+        .manufacture {
+            padding: 8px;
         }
-        /* Nội dung bảng con */
         
-        .nested-table td {
-            background-color: white;
+        .price {
+            color: #E11A45;
+            font-weight: 500;
         }
     </style>
 </head>
 
 <body>
+    <div class="product">
+        <h2>CHƯƠNG TRÌNH ĐẠO BẠO</h2>
 
-    <table border="1">
+        <div class="product-item">
+            <img src="https://www.vlu.edu.vn/_next/image?url=https%3A%2F%2Fvluwebmedia.s3.ap-southeast-1.amazonaws.com%2Fundergra_8983faa549.jpg&w=1920&q=30" alt="photo" class="product-image">
+            <h3 class="product-name">Chương trình Đại học
+            </h3>
+            <p class="manufacture">Chương trình toàn diện giúp hình thành và đẩy mạnh tư duy nghiên cứu ở người học, trang bị các kỹ năng hữu ích để phát triển sự nghiệp tương lai.
 
-        <tr>
-            <th>Device</th>
-            <th>Brand</th>
-            <th colspan="2" class="specifications">Specifications</th>
-        </tr>
+            </p>
+            <p class="price">Tìm hiểu Chương trình Đại học
+            </p>
+        </div>
 
-        <tr>
-            <td rowspan="2">Smartphone</td>
-            <td rowspan="2">Apple</td>
+        <div class="product-item">
+            <img src="https://www.vlu.edu.vn/_next/image?url=https%3A%2F%2Fvluwebmedia.s3.ap-southeast-1.amazonaws.com%2Fthac_si_a43df54097.jpg&w=1920&q=30" alt="photo" class="product-image">
+            <h3 class="product-name">Chương trình Sau đại học
 
-            <td colspan="2">
-                <table class="nested-table" border="1">
+            </h3>
+            <p class="manufacture">Chương trình đào tạo nâng cao, cung cấp tài nguyên học thuật và nghiên cứu phong phú để giúp người học tìm tòi sâu hơn vào lĩnh vực mong muốn.
 
-                    <tr>
-                        <th>Model</th>
-                        <th>Storage</th>
-                    </tr>
+            </p>
+            <p class="price">Tìm hiểu Chương trình Sau đại học
 
-                    <tr>
-                        <td>iPhone 12 Pro</td>
-                        <td>256GB</td>
-                    </tr>
+            </p>
 
-                    <tr>
-                        <td>iPhone SE</td>
-                        <td>128GB</td>
-                    </tr>
+        </div>
 
-                </table>
-            </td>
-        </tr>
+        <div class="product-item">
+            <img src="https://www.vlu.edu.vn/_next/image?url=https%3A%2F%2Fvluwebmedia.s3.ap-southeast-1.amazonaws.com%2Finternational_2850120013.jpg&w=1920&q=30" alt="photo" class="product-image">
+            <h3 class="product-name">Chương trình VGS
 
-        <tr>
-            <td colspan="2"></td>
-        </tr>
+            </h3>
+            <p class="manufacture">Chương trình tạo cơ hội cho người học nhận bằng cấp từ các đại học hàng đầu thế giới và có thêm trải nghiệm với tư cách một công dân toàn cầu.
 
-        <tr>
-            <td>Laptop</td>
-            <td>HP</td>
-            <td colspan="2">15.6" Display</td>
-        </tr>
+            </p>
+            <p class="price">Tìm hiểu Chương trình VGS
 
-        <tr>
-            <td>Tablet</td>
-            <td>Samsung</td>
-            <td colspan="2">10.5" Display</td>
-        </tr>
+            </p>
 
-    </table>
+            </p>
+        </div>
 
 </body>
 
